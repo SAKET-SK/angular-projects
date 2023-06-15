@@ -1,0 +1,34 @@
+<h4>Available Items</h4>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of itemData | paginate: { itemsPerPage: count, currentPage: p }">
+        <th scope="row">{{i.id}}</th>
+        <td>{{i.name}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.price}}</td>
+        <td>
+          <button style="background-color: red; border-radius: 2px">
+            <i (click)="deleteItem(i.id)" class="fa fa-trash"></i>
+          </button>
+          &nbsp;
+          <button style="background-color: lightblue; border-radius: 2px">
+          <a routerLink="/edit/{{i.id}}"><i class="fa fa-edit"></i></a>
+          </button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <br />
+  <div class="text-right" style="text-align: center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

@@ -1,0 +1,23 @@
+<h3>Add New Item</h3>
+<div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Item Sucessfully Added !!</strong> 
+    <button (click)="removeMessage()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<form [formGroup]="addItem" (ngSubmit)="saveData()">
+    <div class="form-group">
+      <label>Item Name</label>
+      <input type="text" class="form-control" placeholder="Enter Item Name" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label>Item Quantity</label>
+      <input type="text" class="form-control" placeholder="Enter Item Quantity" formControlName="quantity">
+    </div>
+    <div class="form-group">
+      <label>Item Price</label>
+      <input type="text" class="form-control" placeholder="Enter Item Price Per Item" formControlName="price">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Add Item</button>
+  </form>

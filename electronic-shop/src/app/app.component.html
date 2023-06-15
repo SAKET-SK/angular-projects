@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+</head>
+<body>
+  <p>ANGULAR PROJECT</p>
+
+  
+        <div *ngIf="router.url != '/' && router.url != '/login' && router.url != '/register'" class="card-header">
+            <app-nav></app-nav>
+        </div>
+    
+
+  
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+</body>
+</html>
